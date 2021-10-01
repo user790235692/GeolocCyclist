@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build the project from the pom file'
-                xcopy 'mvn package'
+                bat 'mvn package'
                 sh 'ls -a'
 
             }
