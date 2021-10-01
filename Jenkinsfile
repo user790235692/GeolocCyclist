@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'java -jar payara-micro.jar --deploy '
+                
             }
         }
     }
