@@ -14,12 +14,13 @@ pipeline {
             steps {
                 echo 'Build the project from the pom file'
                 sh 'mvn package'
+                sh 'ls -a'
 
             }
         }
         stage('Deploy') {
             steps {
-                sh 'java -jar payara-micro.jar --deploy ./target/GeolocCyclist.war'
+                sh 'java -jar payara-micro.jar --deploy '
             }
         }
     }
