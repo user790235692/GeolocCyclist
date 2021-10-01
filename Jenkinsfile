@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'We deploy the project on a payara micro server'
-                bat '/Users/Lucas/payara5/bin/asadmin start-domain --host=localhost --port=4848 --user=admin --passwordfile=/secure/place/for/passwords/domain1_password --secure=false deploy --force=true --name=myproject --contextroot= /Users/Lucas/.jenkins/workspace/GeolocCyclist target/*.war'
+                bat '/Users/Lucas/payara5/bin/asadmin start-domain --port=4848 --user=admin  --contextroot= /Users/Lucas/.jenkins/workspace/GeolocCyclist target/*.war'
             }
         }
     }
