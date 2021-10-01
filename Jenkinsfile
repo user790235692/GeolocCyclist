@@ -18,11 +18,5 @@ pipeline {
 
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'We deploy the project on a payara micro server'
-                bat '/Users/Lucas/payara5/bin/asadmin start-domain --contextroot= /Users/Lucas/.jenkins/workspace/GeolocCyclist target/*.war'
-            }
-        }
     }
 }
