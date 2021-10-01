@@ -16,5 +16,11 @@ pipeline {
                 sh 'mvn package'
             }
         }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy the project on WSL Ubuntu'
+                sh 'java -jar GeolocCyclist.war'
+            }
+        }
     }
 }
