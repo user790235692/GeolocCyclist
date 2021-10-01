@@ -12,13 +12,14 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn install -Dmaven.test.skip=true'
-                sh ''
+                echo 'Build the project from the pom file'
+                sh 'mvn package'
+
             }
         }
         stage('Deploy') {
             steps {
-                sh 'java -jar ./target/GeolocCyclist.war'
+                sh 'java -jar payara-micro.jar --deploy ./target/GeolocCyclist.war'
             }
         }
     }
