@@ -21,7 +21,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'We deploy the project on a payara micro server'
-                bat 'java -jar payara-micro.jar --deploy /target/GeolocCyclist.war
             }
         }
     }
