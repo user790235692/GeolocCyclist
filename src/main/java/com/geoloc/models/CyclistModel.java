@@ -9,6 +9,7 @@ import com.geoloc.beans.Cyclist;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Filters.eq;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -19,6 +20,8 @@ import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
+import org.bson.conversions.Bson;
+
 import org.bson.types.ObjectId;
 
 /**
@@ -54,9 +57,18 @@ public class CyclistModel {
         return list;
     }
 
-    public void delete(ObjectId idCyclist) {
-        Document document = new Document("_id", idCyclist);
-        collection.deleteMany(document);
+    public void delete(Cyclist cyclist) {
+        collection.deleteOne(eq("_id", cyclist.getId()));
     }
-
+    
+    public void update(Cyclist cyclist){ 
+        Bson filter = eq("_id", cyclist.getId());
+        collection.findOneAndReplace(filter, cyclist);
+    }
+    
+    public Cyclist find(ObjectId id){
+        Cyclist c = (Cyclist) collection.find(eq("_id", id)).first();
+        return c;
+    }
+    
 }

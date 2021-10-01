@@ -10,6 +10,10 @@
     </h:head>
     <h:body>
         <h:form>
+            <h:inputHidden value="#{cyclistManagedBean.cyclist.id}">
+                <f:converter converterId="com.geoloc.convertor.IdMongoDBConverter"/>
+                </h:inputHidden>
+
             <p:growl id="growl" showDetail="true" />
             <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
             <p:panelGrid columns="2">
@@ -21,6 +25,8 @@
                         pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
                 </p:inputText>
                 Password : <p:password value="#{cyclistManagedBean.cyclist.password}" required="true"  requiredMessage="This field is required." toggleMask="true"/>
+                Latitude : <p:inputText value="#{cyclistManagedBean.cyclist.latitude}" required="true"  requiredMessage="This field is required."/>
+                Longitude : <p:inputText value="#{cyclistManagedBean.cyclist.longitude}" required="true"  requiredMessage="This field is required."/>
 
 
             </p:panelGrid>

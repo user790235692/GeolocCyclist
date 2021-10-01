@@ -10,6 +10,8 @@ import com.geoloc.models.CyclistModel;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import org.bson.types.ObjectId;
 
@@ -35,8 +37,19 @@ public class CyclistManagedBean {
         this.cyclist = cyclist;
     }
 
-    public void submitButton() {
-        cyclistModel.create(cyclist);
+    public String submitButton() {
+        FacesMessage faces = new FacesMessage(FacesMessage.SEVERITY_INFO, "User is created", null);
+        FacesContext.getCurrentInstance().addMessage("succes_create", faces);
+        if(cyclist.getId() != null){
+            cyclistModel.update(cyclist);
+        }else{
+            cyclistModel.create(cyclist);
+        }
+        
+        
+        cyclist = new Cyclist();
+        
+        return "listCyclist";
     }
 
     public List<Cyclist> showCyclist() {
@@ -44,8 +57,14 @@ public class CyclistManagedBean {
         return listCyclist;
     }
 
-    public void delete(ObjectId id) {
-        cyclistModel.delete(id);
-        System.out.println(id);
+    public void delete(Cyclist cyclist) {
+        cyclistModel.delete(cyclist);
+
     }
+    
+    public String update(Cyclist cyclist){
+        this.cyclist = cyclist;
+        return "index";
+    }
+    
 }

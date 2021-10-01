@@ -23,6 +23,9 @@ public class Cyclist {
     private String password;
     private boolean onLine;
     private String picture;
+    
+    private String latitude;
+    private String longitude;
 
     public ObjectId getId() {
         return id;
@@ -80,7 +83,24 @@ public class Cyclist {
         this.picture = picture;
     }
 
-    public Cyclist(ObjectId id, String email, String firstName, String lastName, String password, boolean onLine, String picture) {
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+    
+
+    public Cyclist(ObjectId id, String email, String firstName, String lastName, String password, boolean onLine, String picture, String latitude, String longitude) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
@@ -88,6 +108,9 @@ public class Cyclist {
         this.password = password;
         this.onLine = onLine;
         this.picture = picture;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        
     }
     
     public Cyclist(){
