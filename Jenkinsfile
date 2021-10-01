@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy the project on WSL Ubuntu'
-                sh 'java -jar jetty-runner-9.4.0.M1.jar GeolocCyclist/target/GeolocCyclist.war'
+                sh 'sudo java -jar jetty-runner-9.4.0.M1.jar GeolocCyclist/target/GeolocCyclist.war'
             }
         }
     }
