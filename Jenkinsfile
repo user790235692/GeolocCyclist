@@ -3,19 +3,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+
+        stage('Clean') {
             steps {
-                echo 'Building..'
+                echo 'Cleaning the project'
+                sh 'mvn clean package'
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
-                echo 'Testing..'
+                sh 'mvn install -Dmaven.test.skip=true'
+                sh ''
             }
         }
         stage('Deploy') {
             steps {
-                sh 'mvn build'
+                sh 'java -jar /target/GeolocCyclist.war'
             }
         }
     }
