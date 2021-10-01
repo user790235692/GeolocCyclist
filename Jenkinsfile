@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'java -jar /target/GeolocCyclist.war'
+                sh 'java -jar ./target/GeolocCyclist.war'
             }
         }
     }
