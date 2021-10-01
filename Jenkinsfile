@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build the project from the pom file'
-                sh 'mvn package'
+                bat 'mvn package'
                 bat 'cls'
 
             }
