@@ -118,7 +118,7 @@
                 <stopPort>8989</stopPort>
                 <stopKey>foo</stopKey>
                     <httpConnector>
-                    <port>9090</port>
+                    <port>8888</port>
             </httpConnector>
                 </configuration>
             </plugin>
