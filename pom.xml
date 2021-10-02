@@ -116,7 +116,7 @@
                 <version>9.4.43.v20210629</version>
                 <configuration>
                     <httpConnector>
-                    <port>8888</port>
+                    <port>9999</port>
             </httpConnector>
                 </configuration>
             </plugin>
