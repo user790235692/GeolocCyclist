@@ -20,8 +20,8 @@ pipeline {
             steps {
                 echo 'Deploy the project on WSL Ubuntu'
                 sh 'ls'
+                sh 'mvn jetty:run'
                 sh 'cd target && java -jar jetty-runner-9.4.0.M1.jar --path /dev GeolocCyclist.war'
-
             }
         }
     }
