@@ -115,8 +115,6 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.43.v20210629</version>
                 <configuration>
-                <stopPort>8989</stopPort>
-                <stopKey>foo</stopKey>
                     <httpConnector>
                     <port>8888</port>
             </httpConnector>
