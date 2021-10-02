@@ -107,6 +107,9 @@
                     <webApp>
                         <contextPath>/dev</contextPath>
                     </webApp>
+                    <httpConnector>
+        <port>8888</port>
+    </httpConnector>
                 </configuration>
             </plugin>
         </plugins>
