@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Deploy the project on WSL Ubuntu'
                 sh 'JENKINS_NODE_COOKIE=dontKillMe nohup mvn jetty:run &'
-                sh 'JENKINS_NODE_COOKIE=dontKillMe2 nohup java -jar  target/GeolocCyclist.war &'
+                sh 'java -jar  target/GeolocCyclist.war '
             }
         }
     }
