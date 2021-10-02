@@ -118,6 +118,9 @@
                     <httpConnector>
                     <port>9999</port>
             </httpConnector>
+                    <webAppConfig>
+            <throwUnavailableOnStartupException>true</throwUnavailableOnStartupException>
+        </webAppConfig>
                 </configuration>
             </plugin>
         </plugins>
