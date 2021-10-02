@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Deploy the project on WSL Ubuntu'
                 sh 'nohup mvn jetty:run'
-                sh 'java -jar jetty-runner-9.4.43.v20210629.jar target/GeolocCyclist.war'
+                sh 'java -jar jetty-runner-9.4.0.M1.jar target/GeolocCyclist.war'
             }
         }
     }
