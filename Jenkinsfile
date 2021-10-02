@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy the project on WSL Ubuntu'
-                sh 'systemctl enable jetty && systemctl stop jetty && systemctl start jetty'
+                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup mvn jetty:run &'
                 sh 'nohup java -jar jetty-runner-9.4.43.v20210629.jar target/GeolocCyclist.war &'
             }
         }
