@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy the project on WSL Ubuntu'
-                sh 'mvn jetty:stop'
+                sh 'lsof -i:8080'
                 sh 'JENKINS_NODE_COOKIE=dontKillMe nohup mvn jetty:run'
                 sh 'java -jar jetty-runner-9.4.43.v20210629.jar target/GeolocCyclist.war'
             }
