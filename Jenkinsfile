@@ -21,7 +21,7 @@ pipeline {
                 echo 'Deploy the project on WSL Ubuntu'
                 sh 'ls'
                 sh 'mvn jetty:run'
-                sh 'cd target && java -jar jetty-runner-9.4.43.v20210629.jar --path /dev GeolocCyclist.war'
+                sh 'cd target && java -jar jetty-runner-9.4.43.v20210629.jar --port 9090 --path /dev GeolocCyclist.war'
             }
         }
     }
