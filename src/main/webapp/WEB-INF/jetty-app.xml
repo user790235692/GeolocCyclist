@@ -2,6 +2,6 @@
 <!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" 
   "http://www.eclipse.org/jetty/configure.dtd">
 <Configure class="org.eclipse.jetty.webapp.WebAppContext">
-    <Set name="contextPath">/jetty</Set>
+    <Set name="contextPath">/dev</Set>
     <Set name="war">absolute/path/to/jetty-app.war</Set>
 </Configure>

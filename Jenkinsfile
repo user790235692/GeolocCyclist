@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Deploy the project on WSL Ubuntu'
                 sh 'ls'
-                sh 'cd target && java -jar GeolocCyclist.war'
+                sh 'cd target && java -jar --path/dev GeolocCyclist.war'
 
             }
         }
