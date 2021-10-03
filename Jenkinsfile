@@ -20,6 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy the project on docker with wsl2'
+                sh 'ls'
                 sh 'docker compose up -d'
             }
         }
