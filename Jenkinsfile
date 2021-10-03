@@ -23,6 +23,7 @@ pipeline {
                 sh 'docker build  --tag=dev_payara .'
                 sh 'chmod +rwx Dockerfile'
                 sh 'chmod +rwx Docker-compose.yml'
+                sh 'docker-compose build'
                 sh 'docker-compose up -d'
             }
         }
