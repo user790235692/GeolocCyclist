@@ -19,9 +19,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploy the project on WSL Ubuntu'
-                sh 'nohup mvn jetty:run'
-                sh 'java -jar jetty-runner-9.4.40.v20210413.jar target/GeolocCyclist.war'
+                echo 'Deploy the project on docker with wsl2'
+                sh 'docker compose up -d'
             }
         }
     }
