@@ -6,6 +6,7 @@
 package com.geoloc.models;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import javax.annotation.PostConstruct;
 import javax.ejb.ConcurrencyManagement;
 import javax.ejb.ConcurrencyManagementType;
@@ -28,9 +29,8 @@ public class MongoClientProvider {
     }
     @PostConstruct
     public void init(){
-        String mongoIpAdress="localhost";
-        Integer mongoPort = 27017;
-        mongoClient = new MongoClient(mongoIpAdress, mongoPort);
+        MongoClientURI uri = new MongoClientURI("mongodb://root:root@mongo:27017/");
+        mongoClient = new MongoClient(uri);
         System.out.println("Je suis connecté");
     }
 }
