@@ -24,7 +24,7 @@ pipeline {
                 sh 'chmod +rwx Dockerfile'
                 sh 'chmod +rwx Docker-compose.yml'
                 sh 'ls -l'
-                sh 'docker-compose up -d'
+                sh 'docker-compose up'
             }
         }
     }
