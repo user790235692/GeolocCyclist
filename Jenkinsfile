@@ -21,8 +21,6 @@ pipeline {
             steps {
                 echo 'Deploy the project on docker with wsl2'
                 sh 'docker build --tag=dev_payara .'
-                sh 'ls -l'
-                sh 'docker-compose build'
                 sh 'docker-compose up -d'
             }
         }
