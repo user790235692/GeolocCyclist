@@ -20,9 +20,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy the project on docker with wsl2'
-                bat 'docker build --tag=dev_payara .'
+                sh 'docker build --tag=dev_payara .'
                 sh 'ls -l'
-                bat 'docker-compose up -d'
+                sh 'docker-compose build'
+                sh 'docker-compose up -d'
             }
         }
     }
