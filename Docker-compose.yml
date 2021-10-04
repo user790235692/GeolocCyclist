@@ -23,7 +23,6 @@ services:
   payara:
       image: dev_payara
       ports:
-        - "8080:8080"
         - "4848:4848"
         - "8181:8181"
       links:
