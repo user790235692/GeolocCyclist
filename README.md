@@ -14,5 +14,5 @@ Afin de pouvoir exécuter mon projet vous devez avoir ces pré-requis sur votre 
   1. Après avoir installé Docker, Java et Maven.
   2. Taper `mvn clean build`
   3. Taper `mvn build`
-  4. Taper `docker build -tag=dev_payara` une seul fois, par la suite l'image sera déja build.
+  4. Taper `docker build -tag=dev_payara .` une seul fois, par la suite l'image sera déja build.
   5. Taper `docker-compose up -d`
