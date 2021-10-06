@@ -24,16 +24,19 @@ services:
     image: adminer
     restart: always
     ports: 
-      - 9091:9091
+      - 9091:8080
+    links:
+      - postgres-db
 
   postgres-db:
     image: postgres:14
     restart: always
+    ports:
+      - "5432:5432"
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
       POSTGRES_DB: test
-    links:
-      - adminer
 
   payara:
       image: dev_payara
@@ -43,3 +46,4 @@ services:
       links:
         - mongo
         - postgre-db
+
