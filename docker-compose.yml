@@ -41,3 +41,4 @@ services:
       links:
         - mongo
         - postgre-db
+        - adminer
