@@ -32,6 +32,8 @@ services:
     environment:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: test
+    links:
+      - adminer
 
   payara:
       image: dev_payara
@@ -41,4 +43,3 @@ services:
       links:
         - mongo
         - postgre-db
-        - adminer
