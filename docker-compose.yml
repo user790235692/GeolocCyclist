@@ -20,18 +20,18 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: root
       ME_CONFIG_MONGODB_URL: mongodb://root:root@mongo:27017/
   
+  adminer:
+    image: adminer
+    restart: always
+    ports: 
+      - 9091:9091
+
   postgres-db:
     image: postgres:14
     restart: always
     environment:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: test
-
-  adminer:
-    image: adminer
-    restart: always
-    ports: 
-      - 9091:9091
 
   payara:
       image: dev_payara
