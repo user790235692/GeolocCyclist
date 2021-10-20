@@ -5,11 +5,13 @@ package com.mycompany.geoloccyclist;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.net.URL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -21,15 +23,16 @@ import org.testng.annotations.Test;
 public class SampleTest {
 
     WebDriver driver;
+    public String  RemoteUrl = "http://localhost:4444/wd/hub";
 
     @BeforeTest
     public void Setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lucas\\Desktop\\chromedriver.exe");
+        
         driver = new ChromeDriver();
         ChromeOptions handlingSSL = new ChromeOptions();
         handlingSSL.setAcceptInsecureCerts(true);
         driver = new ChromeDriver(handlingSSL);
-
+        //driver.set(new RemoteWebDriver(new URL(RemoteUrl), handlingSSL));
     }
 
     @Test
