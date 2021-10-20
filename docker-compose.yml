@@ -67,4 +67,5 @@ services:
       links:
         - mongo
         - postgre-db
+        - firefox
 
