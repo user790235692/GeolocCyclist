@@ -17,7 +17,7 @@ import org.bson.types.ObjectId;
  * @author Lucas
  */
 @FacesConverter("com.geoloc.convertor.IdMongoDBConverter")
-public class Convertor implements Converter{
+public class IdMongoDBConverter implements Converter{
      //methode appelée lors de la lecture de l'ID d'un objet envoyé par un formulaire HTML
     // conversion de formulaire HTML donc STRING vers notre objet perso ObjectId
     @Override
