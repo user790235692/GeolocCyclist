@@ -5,16 +5,14 @@ package com.mycompany.geoloccyclist;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.geoloccyclist;
-
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import static org.testng.Assert.assertEquals;
 
 /**
  *
@@ -28,22 +26,28 @@ public class SampleTest {
     public void Setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lucas\\Desktop\\chromedriver.exe");
         driver = new ChromeDriver();
-    }
+        ChromeOptions handlingSSL = new ChromeOptions();
+        handlingSSL.setAcceptInsecureCerts(true);
+        driver = new ChromeDriver(handlingSSL);
 
-    public void login() {
-        String login_url = "https://opensource-demo.orangehrmlive.com/";
-        driver.get(login_url);
-
-        driver.manage().window().maximize();
-        driver.findElement(By.id("txtUsername")).sendKeys("Admin");
-        driver.findElement(By.id("txtPassword")).sendKeys("admin123");
-        System.out.println(driver.getTitle());
     }
 
     @Test
-    public void dashboard() {
-
-        driver.findElement(By.id("menu_dashboard_index")).click();
+    public void InsertUser() {
+        driver.get("https://localhost:8181/sample/");
+        driver.manage().window().setSize(new Dimension(776, 464));
+        driver.findElement(By.id("j_idt5:j_idt9")).click();
+        driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Lucas");
+        driver.findElement(By.id("j_idt5:j_idt13")).sendKeys("legeek568@gmail.com");
+        driver.findElement(By.id("j_idt5:j_idt11")).click();
+        driver.findElement(By.id("j_idt5:j_idt11")).sendKeys("Lucas Antunes");
+        driver.findElement(By.id("j_idt5:j_idt15")).click();
+        driver.findElement(By.id("j_idt5:j_idt15")).sendKeys("sdsdsd");
+        driver.findElement(By.id("j_idt5:j_idt17")).click();
+        driver.findElement(By.id("j_idt5:j_idt17")).sendKeys("sdsds");
+        driver.findElement(By.id("j_idt5:j_idt19")).click();
+        driver.findElement(By.id("j_idt5:j_idt19")).sendKeys("sdsds");
+        driver.findElement(By.cssSelector(".ui-button-text")).click();
     }
 
     @AfterTest

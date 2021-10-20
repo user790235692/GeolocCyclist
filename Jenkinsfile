@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build the project from the pom file'
-                sh 'mvn package'
+                sh 'mvn package -Dmaven.test.skip'
             }
         }
         stage('Deploy') {
@@ -22,6 +22,12 @@ pipeline {
                 echo 'Deploy the project on docker with wsl2'
                 sh 'docker build --tag=dev_payara .'
                 sh 'docker-compose up -d'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test the app with selenium'
+                sh 'mvn test'
             }
         }
     }
