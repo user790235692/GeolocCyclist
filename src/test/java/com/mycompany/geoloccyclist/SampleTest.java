@@ -27,7 +27,7 @@ public class SampleTest extends Helper {
     public void Setup() {
         FirefoxOptions handlingSSL = new FirefoxOptions();
         handlingSSL.setAcceptInsecureCerts(true);
-        webDriver = new  FirefoxDriver();
+        //webDriver = new  FirefoxDriver();
         webDriver.navigate().to("https://localhost:8181/sample/");
         webDriver.manage().window().setSize(new Dimension(776, 464));
 
