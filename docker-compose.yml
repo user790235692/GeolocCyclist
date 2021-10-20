@@ -49,7 +49,7 @@ services:
       replicas: 1
     entrypoint: bash -c 'SE_OPTS="--host $$HOSTNAME" /opt/bin/entry_point.sh'
   
-   selenium-hub:
+  selenium-hub:
     image: selenium/hub:4.0.0-20211013
     ports:
       - "4444:4444"
