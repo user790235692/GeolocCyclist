@@ -23,7 +23,7 @@ public class SampleTest extends Helper {
 
     @BeforeTest
     public void Setup() {
-        webDriver.get("https://localhost:8181/sample/");
+        webDriver.navigate().to("https://localhost:8181/sample/");
         webDriver.manage().window().setSize(new Dimension(776, 464));
 
     }
