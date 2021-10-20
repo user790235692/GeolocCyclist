@@ -18,7 +18,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class Helper {
 
     protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
-    public static String remote_url_firefox = "http://localhost:4444/ui";
+    public static String remote_url_firefox = "http://localhost:4444/wd/hub";
 
     public void Setup() throws MalformedURLException {
         FirefoxOptions options = new FirefoxOptions();
