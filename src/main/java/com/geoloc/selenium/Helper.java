@@ -22,7 +22,7 @@ public class Helper {
 
     public void Setup() throws MalformedURLException {
         FirefoxOptions options = new FirefoxOptions();
-        options.setAcceptInsecureCerts(true);
+        
         driver.set(new RemoteWebDriver(new URL(remote_url_firefox), options));
     }
 
