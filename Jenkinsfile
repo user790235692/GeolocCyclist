@@ -17,11 +17,10 @@ pipeline {
                 sh 'mvn package -Dmaven.test.skip'
             }
         }
-
-        stage('UnitTest') {
+        stage('SeleniumTest') {
             steps {
                 echo 'Test the UI with selenium'
-                sh 'mvn -Dtest=GetHeaderResponseTest test'
+                sh 'mvn -Dtest=AddUserTest test'
             }
         }
         stage('Deploy') {
@@ -32,10 +31,10 @@ pipeline {
                 sh 'yes y | docker image prune -a'
             }
         }
-        stage('SeleniumTest') {
+        stage('UnitTest') {
             steps {
                 echo 'Test the UI with selenium'
-                sh 'mvn -Dtest=AddUserTest test'
+                sh 'mvn -Dtest=GetHeaderResponseTest test'
             }
         }
     }
