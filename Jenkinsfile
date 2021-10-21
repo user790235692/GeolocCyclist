@@ -17,17 +17,17 @@ pipeline {
                 sh 'mvn package -Dmaven.test.skip'
             }
         }
+        stage('SeleniumTest') {
+            steps {
+                echo 'Test the app with selenium'
+                sh 'mvn test'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploy the project on docker with wsl2'
                 sh 'docker build --tag=dev_payara .'
                 sh 'docker-compose up -d'
-            }
-        }
-        stage('SeleniumTest') {
-            steps {
-                echo 'Test the app with selenium'
-                sh 'mvn test'
             }
         }
     }
