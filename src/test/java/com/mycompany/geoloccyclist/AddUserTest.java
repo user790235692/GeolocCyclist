@@ -36,7 +36,9 @@ public class AddUserTest {
     @Test
     public void testApp() throws InterruptedException {
 
-        driver.get("https://192.168.56.1:8181/sample/");
+        driver.get("https://dev_payara:8181/sample/");
+        driver.findElement(By.id("j_idt5:test")).click();
+        driver.findElement(By.id("j_idt5:test")).sendKeys("Rémi");
         driver.findElement(By.id("j_idt5:lastName")).sendKeys("Vulliez");
         driver.findElement(By.id("j_idt5:email")).sendKeys("chocolatrie@fraise.fr");
         driver.findElement(By.id("j_idt5:password")).click();
