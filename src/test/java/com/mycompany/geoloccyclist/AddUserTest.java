@@ -37,14 +37,7 @@ public class AddUserTest {
     public void testApp() throws InterruptedException {
 
         driver.get("https://192.168.56.1:8181/sample/");
-        driver.findElement(By.id("j_idt5:test")).click();
-        driver.findElement(By.id("j_idt5:test")).sendKeys("Rémi");
-        driver.findElement(By.id("j_idt5:lastName")).sendKeys("Vulliez");
-        driver.findElement(By.id("j_idt5:email")).sendKeys("test@test.fr");
-        driver.findElement(By.id("j_idt5:password")).sendKeys("lulu");
-        driver.findElement(By.id("j_idt5:lat")).sendKeys("6.223");
-        driver.findElement(By.id("j_idt5:long")).sendKeys("6.222");
-        driver.findElement(By.cssSelector(".ui-button-text")).click();
+        Thread.sleep(200);
     }
 
     @AfterTest
