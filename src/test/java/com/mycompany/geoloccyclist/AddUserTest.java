@@ -29,14 +29,14 @@ public class AddUserTest {
     public void setUp() throws MalformedURLException{
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setAcceptInsecureCerts(true);
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), firefoxOptions);
+        driver = new RemoteWebDriver(new URL("http://firefox:4444/wd/hub"), firefoxOptions);
     }
 
 
     @Test
     public void testApp() throws InterruptedException {
 
-        driver.get("https://host.docker.internal:8181/sample/");
+        driver.get("https://192.168.56.1:8181/sample/");
         driver.findElement(By.id("j_idt5:test")).click();
         driver.findElement(By.id("j_idt5:test")).sendKeys("Rémi");
         driver.findElement(By.id("j_idt5:lastName")).sendKeys("Vulliez");
