@@ -1,58 +1,35 @@
 package com.mycompany.geoloccyclist;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Test;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import com.geoloc.selenium.Helper;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
 /**
  *
  * @author Lucas
  */
-public class SampleTest extends Helper {
-
-    WebDriver webDriver = GetDriver();
-
-    @BeforeTest
-    public void Setup() {
-        FirefoxOptions handlingSSL = new FirefoxOptions();
-        handlingSSL.setAcceptInsecureCerts(true);
-        //webDriver = new  FirefoxDriver();
-        webDriver.navigate().to("https://localhost:8181/sample/");
-        webDriver.manage().window().setSize(new Dimension(776, 464));
-
-    }
+public class SampleTest {
 
     @Test
-    public void InsertUser() {
+    public void testApp() throws MalformedURLException, InterruptedException {
 
-        webDriver.findElement(By.id("j_idt5:j_idt9")).click();
-        webDriver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Lucas");
-        webDriver.findElement(By.id("j_idt5:j_idt13")).sendKeys("legeek568@gmail.com");
-        webDriver.findElement(By.id("j_idt5:j_idt11")).click();
-        webDriver.findElement(By.id("j_idt5:j_idt11")).sendKeys("Lucas Antunes");
-        webDriver.findElement(By.id("j_idt5:j_idt15")).click();
-        webDriver.findElement(By.id("j_idt5:j_idt15")).sendKeys("sdsdsd");
-        webDriver.findElement(By.id("j_idt5:j_idt17")).click();
-        webDriver.findElement(By.id("j_idt5:j_idt17")).sendKeys("sdsds");
-        webDriver.findElement(By.id("j_idt5:j_idt19")).click();
-        webDriver.findElement(By.id("j_idt5:j_idt19")).sendKeys("sdsds");
-        webDriver.findElement(By.cssSelector(".ui-button-text")).click();
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+
+        firefoxOptions.setAcceptInsecureCerts(true);
+        
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), firefoxOptions);
+        driver.get("https://192.168.56.1:8181/sample/");
+        Thread.sleep(500);
+        driver.quit();
     }
-
-    @AfterTest
-    public void tearDown() {
-        webDriver.quit();
-    }
-
 }

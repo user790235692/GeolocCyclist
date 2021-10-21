@@ -24,7 +24,7 @@ pipeline {
                 sh 'docker-compose up -d'
             }
         }
-        stage('Test') {
+        stage('SeleniumTest') {
             steps {
                 echo 'Test the app with selenium'
                 sh 'mvn test'
