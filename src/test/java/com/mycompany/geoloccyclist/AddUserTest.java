@@ -37,18 +37,18 @@ public class AddUserTest {
     public void testApp() throws InterruptedException {
 
         driver.get("https://payara:8181/sample/index.jsf");
-        driver.findElement(By.id("j_idt5:test")).click();
-        driver.findElement(By.id("j_idt5:test")).sendKeys("Rémi");
-        driver.findElement(By.id("j_idt5:lastName")).click();
-        driver.findElement(By.id("j_idt5:lastName")).sendKeys("Vulliez");
-        driver.findElement(By.id("j_idt5:email")).click();
-        driver.findElement(By.id("j_idt5:email")).sendKeys("chocolaterie@fraise.fr");
-        driver.findElement(By.id("j_idt5:password")).click();
-        driver.findElement(By.id("j_idt5:password")).sendKeys("FlamantRose36");
-        driver.findElement(By.id("j_idt5:lat")).click();
-        driver.findElement(By.id("j_idt5:lat")).sendKeys("6.23");
-        driver.findElement(By.id("j_idt5:long")).click();
-        driver.findElement(By.id("j_idt5:long")).sendKeys("3.45");
+        driver.findElement(By.id("j_idt5:j_idt9")).click();
+        driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Rémi");
+        driver.findElement(By.id("j_idt5:j_idt11")).click();
+        driver.findElement(By.id("j_idt5:j_idt11")).sendKeys("Vulliez");
+        driver.findElement(By.id("j_idt5:j_idt13")).click();
+        driver.findElement(By.id("j_idt5:j_idt13")).sendKeys("chocolaterie@fraise.fr");
+        driver.findElement(By.id("j_idt5:j_idt15")).click();
+        driver.findElement(By.id("j_idt5:j_idt15")).sendKeys("FlamantRose36");
+        driver.findElement(By.id("j_idt5:j_idt17")).click();
+        driver.findElement(By.id("j_idt5:j_idt17")).sendKeys("6.12");
+        driver.findElement(By.id("j_idt5:j_idt19")).click();
+        driver.findElement(By.id("j_idt5:j_idt19")).sendKeys("3.23");
         driver.findElement(By.cssSelector(".ui-button-text")).click();
     }
 
