@@ -36,17 +36,14 @@ public class AddUserTest {
     @Test
     public void testApp() throws InterruptedException {
 
-        driver.get("https://192.168.56.1:8181/sample/");
+        driver.get("https://localhost:8181/sample/");
         driver.findElement(By.id("j_idt5:test")).click();
         driver.findElement(By.id("j_idt5:test")).sendKeys("Rémi");
         driver.findElement(By.id("j_idt5:lastName")).sendKeys("Vulliez");
-        driver.findElement(By.id("j_idt5:email")).sendKeys("chocolatrie@fraise.fr");
-        driver.findElement(By.id("j_idt5:password")).click();
-        driver.findElement(By.id("j_idt5:password")).sendKeys("FlamantRose36");
-        driver.findElement(By.id("j_idt5:lat")).click();
-        driver.findElement(By.id("j_idt5:lat")).sendKeys("46.19308371013082");
-        driver.findElement(By.id("j_idt5:long")).click();
-        driver.findElement(By.id("j_idt5:long")).sendKeys("6.2468465014616354");
+        driver.findElement(By.id("j_idt5:email")).sendKeys("test@test.fr");
+        driver.findElement(By.id("j_idt5:password")).sendKeys("lulu");
+        driver.findElement(By.id("j_idt5:lat")).sendKeys("6.223");
+        driver.findElement(By.id("j_idt5:long")).sendKeys("6.222");
         driver.findElement(By.cssSelector(".ui-button-text")).click();
     }
 
