@@ -36,7 +36,7 @@ public class AddUserTest {
     @Test
     public void testApp() throws InterruptedException {
 
-        driver.get("https://payara:8181/sample/index.jsf");
+        driver.get("https://payara:8181/sample/");
         driver.findElement(By.id("j_idt5:j_idt9")).click();
         driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Rémi");
         driver.findElement(By.id("j_idt5:j_idt11")).click();
