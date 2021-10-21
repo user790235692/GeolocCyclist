@@ -29,7 +29,7 @@ public class AddUserTest {
     public void setUp() throws MalformedURLException{
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setAcceptInsecureCerts(true);
-        driver = new RemoteWebDriver(new URL("http://firefox:4444/wd"), firefoxOptions);
+        driver = new RemoteWebDriver(new URL("http://firefox:4444/wd/hub"), firefoxOptions);
     }
 
 
