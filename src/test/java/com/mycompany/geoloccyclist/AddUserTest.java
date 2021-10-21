@@ -2,17 +2,15 @@ package com.mycompany.geoloccyclist;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -44,6 +42,7 @@ public class AddUserTest {
 
         
         driver.get("https://payara:8181/sample/");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.id("j_idt5:j_idt9")).click();
         driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Rémi");
         driver.findElement(By.id("j_idt5:j_idt11")).click();
@@ -57,7 +56,6 @@ public class AddUserTest {
         driver.findElement(By.id("j_idt5:j_idt19")).click();
         driver.findElement(By.id("j_idt5:j_idt19")).sendKeys("3.23");
         driver.findElement(By.cssSelector(".ui-button-text")).click();
-        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector(".ui-button-text"))));
     }
 
     @AfterTest
