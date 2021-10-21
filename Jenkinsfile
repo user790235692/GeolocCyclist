@@ -34,7 +34,7 @@ pipeline {
                 echo 'Deploy the project on docker with wsl2'
                 sh 'docker build --tag=dev_payara .'
                 sh 'docker-compose up -d'
-                sh 'docker image prune -a -y'
+                sh 'yes y | docker image prune -a'
             }
         }
     }
