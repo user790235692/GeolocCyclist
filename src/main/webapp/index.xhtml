@@ -18,19 +18,19 @@
             <p:growl id="growl-sticky" for="sticky-key" showDetail="true" sticky="true" />
             <p:panelGrid columns="2">
 
-                FirstName : <p:inputText value="#{cyclistManagedBean.cyclist.firstName}" required="true"  requiredMessage="This field is required." id="test"/>
-                LastName : <p:inputText value="#{cyclistManagedBean.cyclist.lastName}" required="true"  requiredMessage="This field is required." id="lastName"/>
-                Email :  <p:inputText value="#{cyclistManagedBean.cyclist.email}"  requiredMessage="Please enter your email address." validatorMessage="Invalid email format" id="email">
+                FirstName : <p:inputText value="#{cyclistManagedBean.cyclist.firstName}" required="true"  requiredMessage="This field is required."/>
+                LastName : <p:inputText value="#{cyclistManagedBean.cyclist.lastName}" required="true"  requiredMessage="This field is required."/>
+                Email :  <p:inputText value="#{cyclistManagedBean.cyclist.email}"  requiredMessage="Please enter your email address." validatorMessage="Invalid email format">
                     <f:validateRegex
                         pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
                 </p:inputText>
-                Password : <p:password value="#{cyclistManagedBean.cyclist.password}" required="true"  requiredMessage="This field is required." toggleMask="true" id="password"/>
-                Latitude : <p:inputText value="#{cyclistManagedBean.cyclist.latitude}" required="true"  requiredMessage="This field is required." id="lat"/>
-                Longitude : <p:inputText value="#{cyclistManagedBean.cyclist.longitude}" required="true"  requiredMessage="This field is required." id="long"/>
+                Password : <p:password value="#{cyclistManagedBean.cyclist.password}" required="true"  requiredMessage="This field is required." toggleMask="true"/>
+                Latitude : <p:inputText value="#{cyclistManagedBean.cyclist.latitude}" required="true"  requiredMessage="This field is required."/>
+                Longitude : <p:inputText value="#{cyclistManagedBean.cyclist.longitude}" required="true"  requiredMessage="This field is required."/>
 
 
             </p:panelGrid>
-            <p:commandButton  value="Register" action="#{cyclistManagedBean.submitButton()}" ajax="false" id="send"/>
+            <p:commandButton  value="Register" action="#{cyclistManagedBean.submitButton()}" ajax="false"/>
         </h:form>
     </h:body>
 </html>
