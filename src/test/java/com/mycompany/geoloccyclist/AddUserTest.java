@@ -27,15 +27,11 @@ import org.testng.annotations.Test;
 public class AddUserTest {
 
     WebDriver driver;
-    private Map<String, Object> vars;
-    JavascriptExecutor js;
     @BeforeTest
     
     public void setUp() throws MalformedURLException{
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setAcceptInsecureCerts(true);
-        js = (JavascriptExecutor) driver;
-        vars = new HashMap<String, Object>();
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), firefoxOptions);
     }
 
@@ -44,18 +40,18 @@ public class AddUserTest {
     public void testApp() throws InterruptedException {
 
         driver.get("https://payara:8181/sample/");
-        driver.findElement(By.id("j_idt5:j_idt9")).click();
-        driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Rémi");
-        driver.findElement(By.id("j_idt5:j_idt11")).click();
-        driver.findElement(By.id("j_idt5:j_idt11")).sendKeys("Vulliez");
-        driver.findElement(By.id("j_idt5:j_idt13")).click();
-        driver.findElement(By.id("j_idt5:j_idt13")).sendKeys("chocolaterie@fraise.fr");
-        driver.findElement(By.id("j_idt5:j_idt15")).click();
-        driver.findElement(By.id("j_idt5:j_idt15")).sendKeys("FlamantRose36");
-        driver.findElement(By.id("j_idt5:j_idt17")).click();
-        driver.findElement(By.id("j_idt5:j_idt17")).sendKeys("6.12");
-        driver.findElement(By.id("j_idt5:j_idt19")).click();
-        driver.findElement(By.id("j_idt5:j_idt19")).sendKeys("3.23");
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt9']")).click();
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt9']")).sendKeys("Rémi");
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt11']")).click();
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt11']")).sendKeys("Vulliez");
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt13']")).click();
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt13']")).sendKeys("chocolaterie@fraise.fr");
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt15']")).click();
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt15']")).sendKeys("FlamantRose36");
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt17']")).click();
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt17']")).sendKeys("6.12");
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt19']")).click();
+        driver.findElement(By.xpath("//input[@class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ' and @id='j_idt5:j_idt19']")).sendKeys("3.23");
         driver.findElement(By.cssSelector(".ui-button-text")).click();
     }
 
