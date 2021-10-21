@@ -40,7 +40,6 @@ public class AddUserTest {
     @Test
     public void testApp() throws InterruptedException {
 
-        
         driver.get("https://payara:8181/sample");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.id("j_idt5:j_idt9")).click();
