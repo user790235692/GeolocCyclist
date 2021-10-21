@@ -17,12 +17,7 @@ pipeline {
                 sh 'mvn package -Dmaven.test.skip'
             }
         }
-        stage('SeleniumTest') {
-            steps {
-                echo 'Test the UI with selenium'
-                sh 'mvn -Dtest=AddUserTest test'
-            }
-        }
+
         stage('UnitTest') {
             steps {
                 echo 'Test the UI with selenium'
@@ -35,6 +30,12 @@ pipeline {
                 sh 'docker build --tag=dev_payara .'
                 sh 'docker-compose up -d'
                 sh 'yes y | docker image prune -a'
+            }
+        }
+        stage('SeleniumTest') {
+            steps {
+                echo 'Test the UI with selenium'
+                sh 'mvn -Dtest=AddUserTest test'
             }
         }
     }
