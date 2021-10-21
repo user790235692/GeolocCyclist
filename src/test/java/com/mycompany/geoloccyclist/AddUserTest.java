@@ -44,7 +44,6 @@ public class AddUserTest {
 
         
         driver.get("https://payara:8181/sample/");
-        new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfElementLocated(By.id("j_idt5:j_idt9")));
         driver.findElement(By.id("j_idt5:j_idt9")).click();
         driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Rémi");
         driver.findElement(By.id("j_idt5:j_idt11")).click();
