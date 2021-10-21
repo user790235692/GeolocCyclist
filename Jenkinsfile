@@ -28,8 +28,8 @@ pipeline {
         stage('UnitTest') {
             steps {
                 echo 'Test the UI with selenium'
-                echo 'We wait to make sur the container runing'
-                sh 'sleep 20'
+                echo 'We wait to make sure the container is runing'
+                sh 'sleep 10'
                 sh 'mvn -Dtest=GetHeaderResponseTest test'
             }
         }
