@@ -41,7 +41,7 @@ public class AddUserTest {
     public void testApp() throws InterruptedException {
 
         driver.get("https://payara:8181/sample");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.id("j_idt5:j_idt9")).click();
         driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Remi");
         driver.findElement(By.id("j_idt5:j_idt11")).click();
