@@ -39,16 +39,15 @@ public class AddUserTest {
         driver.get("https://192.168.56.1:8181/sample/");
         driver.findElement(By.id("j_idt5:firstName")).click();
         driver.findElement(By.id("j_idt5:firstName")).sendKeys("Rémi");
-        driver.findElement(By.id("j_idt5:email")).sendKeys("chocolatrie@fraise.fr");
-        driver.findElement(By.id("j_idt5:lastName")).click();
         driver.findElement(By.id("j_idt5:lastName")).sendKeys("Vulliez");
+        driver.findElement(By.id("j_idt5:email")).sendKeys("chocolatrie@fraise.fr");
         driver.findElement(By.id("j_idt5:password")).click();
         driver.findElement(By.id("j_idt5:password")).sendKeys("FlamantRose36");
         driver.findElement(By.id("j_idt5:lat")).click();
         driver.findElement(By.id("j_idt5:lat")).sendKeys("46.19308371013082");
         driver.findElement(By.id("j_idt5:long")).click();
         driver.findElement(By.id("j_idt5:long")).sendKeys("6.2468465014616354");
-        driver.findElement(By.id("j_idt5:send")).click();
+        driver.findElement(By.cssSelector(".ui-button-text")).click();
     }
 
     @AfterTest
