@@ -41,7 +41,7 @@ public class AddUserTest {
     public void testApp() throws InterruptedException {
 
         
-        driver.get("https://payara:8181/GeolocCyclist/index.jsf");
+        driver.get("https://payara:8181");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         System.out.println(driver.getPageSource());
     }
