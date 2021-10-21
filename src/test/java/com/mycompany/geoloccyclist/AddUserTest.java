@@ -2,8 +2,11 @@ package com.mycompany.geoloccyclist;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
@@ -24,11 +27,15 @@ import org.testng.annotations.Test;
 public class AddUserTest {
 
     WebDriver driver;
+    private Map<String, Object> vars;
+    JavascriptExecutor js;
     @BeforeTest
     
     public void setUp() throws MalformedURLException{
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setAcceptInsecureCerts(true);
+        js = (JavascriptExecutor) driver;
+        vars = new HashMap<String, Object>();
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), firefoxOptions);
     }
 
