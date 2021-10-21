@@ -44,7 +44,7 @@ public class AddUserTest {
         driver.get("https://payara:8181/sample");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.id("j_idt5:j_idt9")).click();
-        driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Rémi1");
+        driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Remi");
         driver.findElement(By.id("j_idt5:j_idt11")).click();
         driver.findElement(By.id("j_idt5:j_idt11")).sendKeys("Vulliez");
         driver.findElement(By.id("j_idt5:j_idt13")).click();
