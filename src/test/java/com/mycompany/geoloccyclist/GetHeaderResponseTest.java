@@ -23,7 +23,7 @@ public class GetHeaderResponseTest {
     @Test
     public void Get200CodeIndex() throws IOException {
         try{
-            URL index = new URL("https://payara:8181/sample/");
+            URL index = new URL("https://localhost:8181/sample/");
             HttpURLConnection connection = (HttpURLConnection)index.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
@@ -40,7 +40,7 @@ public class GetHeaderResponseTest {
     @Test
     public void Get200CodeList() throws IOException {
         try{
-            URL index = new URL("https://payara:8181/sample/listCyclist.jsf");
+            URL index = new URL("https://localhost:8181/sample/listCyclist.jsf");
             HttpURLConnection connection = (HttpURLConnection)index.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
