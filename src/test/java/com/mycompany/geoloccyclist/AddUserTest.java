@@ -43,19 +43,7 @@ public class AddUserTest {
         
         driver.get("https://payara:8181/sample/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.findElement(By.id("j_idt5:j_idt9")).click();
-        driver.findElement(By.id("j_idt5:j_idt9")).sendKeys("Rémi");
-        driver.findElement(By.id("j_idt5:j_idt11")).click();
-        driver.findElement(By.id("j_idt5:j_idt11")).sendKeys("Vulliez");
-        driver.findElement(By.id("j_idt5:j_idt13")).click();
-        driver.findElement(By.id("j_idt5:j_idt13")).sendKeys("chocolaterie@fraise.fr");
-        driver.findElement(By.id("j_idt5:j_idt15")).click();
-        driver.findElement(By.id("j_idt5:j_idt15")).sendKeys("FlamantRose36");
-        driver.findElement(By.id("j_idt5:j_idt17")).click();
-        driver.findElement(By.id("j_idt5:j_idt17")).sendKeys("6.12");
-        driver.findElement(By.id("j_idt5:j_idt19")).click();
-        driver.findElement(By.id("j_idt5:j_idt19")).sendKeys("3.23");
-        driver.findElement(By.cssSelector(".ui-button-text")).click();
+        driver.getPageSource();
     }
 
     @AfterTest
