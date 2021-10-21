@@ -58,6 +58,7 @@ public class AddUserTest {
         driver.findElement(By.id("j_idt5:j_idt19")).click();
         driver.findElement(By.id("j_idt5:j_idt19")).sendKeys("3.23");
         driver.findElement(By.cssSelector(".ui-button-text")).click();
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector(".ui-button-text"))));
     }
 
     @AfterTest
