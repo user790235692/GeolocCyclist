@@ -39,11 +39,16 @@ public class AddUserTest {
         driver.get("https://payara:8181/sample/index.jsf");
         driver.findElement(By.id("j_idt5:test")).click();
         driver.findElement(By.id("j_idt5:test")).sendKeys("Rémi");
+        driver.findElement(By.id("j_idt5:lastName")).click();
         driver.findElement(By.id("j_idt5:lastName")).sendKeys("Vulliez");
-        driver.findElement(By.id("j_idt5:email")).sendKeys("test@test.fr");
-        driver.findElement(By.id("j_idt5:password")).sendKeys("lulu");
-        driver.findElement(By.id("j_idt5:lat")).sendKeys("6.223");
-        driver.findElement(By.id("j_idt5:long")).sendKeys("6.222");
+        driver.findElement(By.id("j_idt5:email")).click();
+        driver.findElement(By.id("j_idt5:email")).sendKeys("chocolaterie@fraise.fr");
+        driver.findElement(By.id("j_idt5:password")).click();
+        driver.findElement(By.id("j_idt5:password")).sendKeys("FlamantRose36");
+        driver.findElement(By.id("j_idt5:lat")).click();
+        driver.findElement(By.id("j_idt5:lat")).sendKeys("6.23");
+        driver.findElement(By.id("j_idt5:long")).click();
+        driver.findElement(By.id("j_idt5:long")).sendKeys("3.45");
         driver.findElement(By.cssSelector(".ui-button-text")).click();
     }
 
