@@ -19,7 +19,7 @@ import java.net.URL;
  *
  * @author Lucas
  */
-public class GetHeaderResponse {
+public class GetHeaderResponseTest {
     @Test
     public void Get200Code() throws IOException {
         try{
