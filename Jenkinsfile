@@ -17,12 +17,6 @@ pipeline {
                 sh 'mvn package -Dmaven.test.skip'
             }
         }
-        stage('SeleniumTest') {
-            steps {
-                echo 'Test the UI with selenium'
-                sh 'mvn -Dtest=AddUserTest test'
-            }
-        }
         stage('Deploy') {
             steps {
                 echo 'Deploy the project on docker with wsl2'
@@ -34,7 +28,16 @@ pipeline {
         stage('UnitTest') {
             steps {
                 echo 'Test the UI with selenium'
+                echo 'We wait to make sur the container runing'
+                sh 'sleep 5'
                 sh 'mvn -Dtest=GetHeaderResponseTest test'
+            }
+        }
+
+        stage('SeleniumTest') {
+            steps {
+                echo 'Test the UI with selenium'
+                sh 'mvn -Dtest=AddUserTest test'
             }
         }
     }
