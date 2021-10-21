@@ -39,7 +39,7 @@ services:
       POSTGRES_DB: test
   
   firefox:
-    image: selenium/standalone-firefox:93.0
+    image: selenium/standalone-firefox:92.0
     ports:
       - 4444:4444
     restart: always
