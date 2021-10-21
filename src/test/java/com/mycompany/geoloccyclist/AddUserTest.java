@@ -43,7 +43,7 @@ public class AddUserTest {
         
         driver.get("https://payara:8181/sample/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.getPageSource();
+        System.out.println(driver.getPageSource());
     }
 
     @AfterTest
