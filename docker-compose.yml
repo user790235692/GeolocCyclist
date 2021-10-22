@@ -51,6 +51,6 @@ services:
         - "8181:8181"
       links:
         - mongo
-        - postgre-db
+        - postgres-db
         - firefox
 
