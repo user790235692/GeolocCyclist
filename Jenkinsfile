@@ -29,7 +29,7 @@ pipeline {
             steps {
                 echo 'Test the UI with selenium'
                 echo 'We wait to make sure the container is runing'
-                sh 'sleep 15'
+                sh 'sleep 20'
                 sh 'mvn -Dtest=GetHeaderResponseTest test'
             }
         }
