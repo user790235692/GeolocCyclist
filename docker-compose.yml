@@ -38,12 +38,6 @@ services:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: test
   
-  firefox:
-    image: selenium/standalone-firefox:92.0
-    ports:
-      - 4444:4444
-    restart: always
-
   payara:
       image: dev_payara
       ports:
@@ -52,5 +46,4 @@ services:
       links:
         - mongo
         - postgres-db
-        - firefox
 
