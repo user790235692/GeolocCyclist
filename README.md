@@ -1,11 +1,20 @@
+## Préambule
+Mon application Java J2E se build avec un Maven et s'exécuter sur un serveur (PAYARA).
+Ma solution communique avec une base de donnée MongoDb qui peut également être administré avec Mongo-express.
+Tout mon environnement est conteneurisé.
+
+
+
 ## Prérequis
-Afin de pouvoir exécuter mon projet vous devez avoir ces pré-requis sur votre machine:
+Afin de pouvoir exécuter mon projet vous devez avoir ces pré-requis sur votre machine :
   * Docker
-  * JDK 8
-  * Maven
  
-### Lancement
-  1. Après avoir installé Docker, Java et Maven.
-  2. Taper `mvn clean install`
-  4. Taper `docker build -tag=dev_payara .` une seul fois, par la suite l'image sera déja build.
-  5. Taper `docker-compose up -d`
+## Lancement
+  1. Après avoir installé Docker
+  2. Tapez `docker build -tag=dev_payara .` une seule fois, par la suite l'image sera déjà build.
+  3. Tapez `docker-compose up -d`
+
+## Lien utile
+  1. [Mongo-express](http://www.localhost:8081)
+  2. [Mon application Java](https://localhost:8181/sample)
+  3. [Payara-admin](https://localhost:4848) (useName: admin, passWord: admin)

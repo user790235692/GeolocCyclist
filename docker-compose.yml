@@ -19,30 +19,6 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: root
       ME_CONFIG_MONGODB_URL: mongodb://root:root@mongo:27017/
-  
-  adminer:
-    image: adminer
-    restart: always
-    ports: 
-      - 9091:8080
-    links:
-      - postgres-db
-
-  postgres-db:
-    image: postgres:14
-    restart: always
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: test
-  
-  firefox:
-    image: selenium/standalone-firefox:92.0
-    ports:
-      - 4444:4444
-    restart: always
 
   payara:
       image: dev_payara
@@ -51,6 +27,6 @@ services:
         - "8181:8181"
       links:
         - mongo
-        - postgres-db
-        - firefox
+
+
 
